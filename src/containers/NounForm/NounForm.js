@@ -30,6 +30,8 @@ const useStyles = makeStyles({
   },
 });
 
+// User input form component
+
 const NounForm = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -62,15 +64,6 @@ const NounForm = () => {
           variant="standard"
           required={true}
         />
-        {/* <select onChange={handleChangeCase}>
-            <option value='im'>Именительный падеж</option>
-            <option value='rt'>Родительный падеж</option>
-            <option value='dt'>Дательный падеж</option>
-            <option value='vn'>Винительный падеж</option>
-            <option value='tv'>Творительный падеж</option>
-            <option value='pr'>Предложный падеж</option>
-          </select> */}
-
         <Select
           value={cases}
           className={classes.select}
@@ -83,7 +76,6 @@ const NounForm = () => {
           <MenuItem value="tv">Творительный падеж</MenuItem>
           <MenuItem value="pr">Предложный падеж</MenuItem>
         </Select>
-
         <Button
           type="submit"
           className={classes.button}
@@ -92,10 +84,7 @@ const NounForm = () => {
         >
           Просклонять
         </Button>
-        {/* <button type='submit'>Просклонять</button> */}
-        {/* </FormControl> */}
       </form>
-
     </div>
   );
 };

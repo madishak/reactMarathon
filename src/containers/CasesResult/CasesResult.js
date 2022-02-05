@@ -15,6 +15,8 @@ const useStyles = makeStyles({
   },
 });
 
+// View results component 
+
 const CasesResult = (props) => {
   const classes = useStyles();
   const { userData } = props;

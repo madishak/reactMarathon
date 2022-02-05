@@ -10,17 +10,19 @@ const userData = (state = {}, action) => {
 
       let newNoun = "";
       if (endings.includes(noun[noun.length - 1])) {
-        newNoun = nounEndings.reduce((acc, elem) => {
-          if (noun[noun.length - 1] === elem.ending) {
-            acc =
+        // Nouns with endings ["а", "я", "о", "е", "ь"]
+        newNoun = nounEndings.reduce((newValue, nounEnding) => {
+          if (noun[noun.length - 1] === nounEnding.ending) {
+            newValue =
               noun.substring(0, noun.length - 1) +
               noun
                 .substring(noun.length - 1)
-                .replace(noun[noun.length - 1], elem.cases[cases]);
+                .replace(noun[noun.length - 1], nounEnding.cases[cases]);
           }
-          return acc;
+          return newValue;
         }, "");
       } else {
+        // Nouns without endings
         const { endings } = nounZeroEndings;
         newNoun = noun + endings[cases];
       }
